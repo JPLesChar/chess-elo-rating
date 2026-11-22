@@ -35,7 +35,10 @@
     </section>
 
     <section id="record" class="section">
-      <div class="section-heading"><div><p class="eyebrow">Match entry</p><h1>Record Game</h1></div></div>
+      <div class="section-heading">
+        <div><p class="eyebrow">Match entry</p><h1>Record Game</h1></div>
+        <button id="changePinButton" class="secondary-button" type="button">Change PIN</button>
+      </div>
       <div class="record-layout"><form id="gameForm" class="panel form-panel">
         <label>Game Date<input id="gameDate" type="date" required></label>
         <label>White Player<select id="whitePlayer" required><option value="">Select player</option></select></label>
@@ -56,6 +59,16 @@
     </section>
   </main>
 
+  <dialog id="pinDialog">
+    <form id="pinForm">
+      <div class="dialog-header"><h2 id="pinDialogTitle">Enter PIN</h2><button class="icon-button" id="cancelPinDialog" type="button" aria-label="Cancel">×</button></div>
+      <label id="pinCurrentLabel">PIN<input id="pinInput" type="password" inputmode="numeric" autocomplete="off" required></label>
+      <label id="pinNewLabel" hidden>New PIN<input id="newPinInput" type="password" inputmode="numeric" minlength="4" maxlength="8" autocomplete="new-password"></label>
+      <label id="pinConfirmLabel" hidden>Confirm New PIN<input id="confirmPinInput" type="password" inputmode="numeric" minlength="4" maxlength="8" autocomplete="new-password"></label>
+      <div class="dialog-actions"><button class="secondary-button" id="cancelPinButton" type="button">Cancel</button><button class="primary-button" type="submit">Continue</button></div>
+    </form>
+  </dialog>
+
   <dialog id="playerDialog"><form id="playerForm" method="dialog"><div class="dialog-header"><h2 id="playerDialogTitle">Add Player</h2><button class="icon-button" value="cancel" type="button" id="closePlayerDialog" aria-label="Close">×</button></div><label>Player name<input id="playerName" maxlength="60" required></label><label>Starting rating<input id="playerRating" type="number" min="100" max="4000" value="1400" required></label><div class="dialog-actions"><button class="secondary-button" value="cancel" type="button" id="cancelPlayerDialog">Cancel</button><button class="primary-button" type="submit">Save Player</button></div></form></dialog>
 
   <dialog id="gameEditDialog">
@@ -72,5 +85,6 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
   <script src="game-history.js"></script>
+  <script src="pin.js"></script>
 </body>
 </html>
