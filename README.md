@@ -37,5 +37,5 @@ Clearing browser data or changing browsers may remove locally stored information
 
 Always keep a recent backup of your exported data.
 
-Disclaimer
+### Disclaimer
 This is an unofficial chess Elo calculator and is not affiliated with FIDE or any chess organization. The calculator provides estimates and may not match the rating system used by a specific federation or platform.
